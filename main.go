@@ -10,8 +10,7 @@ import (
 //    AppleService --> BananaService --> PeachService --> AppleService
 // 3. Access to any service/validators from any service/validators bez gemoroya
 func main() {
-	mainManager := managers.MainManager{}
-	mainManager.InitMainManager()
+	mainManager := managers.InitMainManager()
 	mainManager.Services().AppleService().A1()
 	fmt.Println("done")
 }

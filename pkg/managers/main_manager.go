@@ -9,9 +9,11 @@ type MainManager struct {
 	validators iManagers.IValidatorsManager
 }
 
-func (mm *MainManager) InitMainManager() {
-	mm.services = InitServiceManager(mm)
-	mm.validators = InitValidatorsManager(mm)
+func InitMainManager() *MainManager {
+	mm := MainManager{}
+	mm.services = InitServiceManager(&mm)
+	mm.validators = InitValidatorsManager(&mm)
+	return &mm
 }
 
 func (mm *MainManager) Services() iManagers.IServicesManager {

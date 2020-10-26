@@ -2,6 +2,7 @@ package validators
 
 import (
 	iManagers "example-di/pkg/interfaces/managers"
+	"fmt"
 )
 
 type Red struct {
@@ -17,5 +18,6 @@ func NewRed(
 }
 
 func (color *Red) IsRed() {
+	fmt.Println("i'm red")
 	color.manager.Services().AppleService().A3()
 }

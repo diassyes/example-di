@@ -19,8 +19,10 @@ func NewAppleService(
 
 func (service *AppleService) A1() {
 	fmt.Println("before A1")
-	service.manager.Services().BananaService().B1()
-	service.manager.Validators().RedValidator().IsRed()
+	service.manager.Services().BananaService().B1()     // A1 -> B1 -> P1 -> A2
+	service.manager.Services().BananaService().B2()     // A1 -> B2 -> A2
+	service.manager.Validators().RedValidator().IsRed() // A1 -> IsRed -> A3
+	// todo: service.manager.Repos().CustomerRepo().FindByID(123)
 	fmt.Println("after A1")
 }
 
